@@ -1,14 +1,14 @@
 <testsuites name="Mocha Tests">
-  <testsuite name="Transaction service" tests="5" errors="0" failures="0" skipped="0" timestamp="2019-01-26T12:58:45" time="1.635">
-    <testcase classname="Transaction service" name="should return a 200 response and body as JSON" time="0.244">
+  <testsuite name="Transaction service" tests="5" errors="0" failures="0" skipped="0" timestamp="2019-01-26T13:24:46" time="1.461">
+    <testcase classname="Transaction service" name="should return a 200 response and body as JSON" time="0.243">
     </testcase>
-    <testcase classname="Transaction service" name="should return status as string and details as object" time="0.231">
+    <testcase classname="Transaction service" name="should return status as string and details as object" time="0.228">
     </testcase>
-    <testcase classname="Transaction service" name="should return 401 when api key is incorrect" time="0.23">
+    <testcase classname="Transaction service" name="should return 401 when api key is incorrect" time="0.216">
     </testcase>
-    <testcase classname="Transaction service" name="should return 401 when api key is empty" time="0.23">
+    <testcase classname="Transaction service" name="should return 401 when api key is empty" time="0.228">
     </testcase>
-    <testcase classname="Transaction service" name="should return 404 if transaction id not found (expired)" time="0.238">
+    <testcase classname="Transaction service" name="should return 404 if transaction id not found (expired)" time="0.228">
     </testcase>
   </testsuite>
 </testsuites>
