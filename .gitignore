@@ -1,2 +1,2 @@
 #ignoring reports folder
-test-result/
+*.xml
