@@ -1,0 +1,27 @@
+{
+  "name": "test_js",
+  "version": "1.0.0",
+  "description": "\"API testing\"",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "JUNIT_REPORT_PATH=test-result/result.xml JUNIT_REPORT_STACK=1 mocha --timeout 25000 --colors --reporter mocha-jenkins-reporter || true"
+  },
+  "author": "Tina",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/argirovatina/test_transaction_service"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "chai": "^3.5.0",
+    "mocha": "^5.2.0",
+    "mocha-jenkins-reporter": "^0.4.1",
+    "test.js": "^1.0.0"
+  },
+  "devDependencies": {
+    "supertest": "^3.4.2"
+  }
+}
