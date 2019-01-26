@@ -1,2 +1,2 @@
-#ignoring reports folder
-.DS_Store
+# ignore test results files
+test-result/
