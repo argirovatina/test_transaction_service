@@ -1,2 +1,2 @@
 #ignoring reports folder
-*.xml
+.DS_Store
