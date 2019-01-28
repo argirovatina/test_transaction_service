@@ -1,7 +1,8 @@
 var should = require('chai').should(),
     expect = require('chai').expect,
     supertest = require('supertest'),
-    uuid = require("uuid");
+    log = require('log-to-file')
+    uuid = require("uuid"),
     api_key = "aa0a34df13827f999a0d3e3daccede59"
     expired_transaction_id = "7133b3e2-622e-478f-9d36-06da29c6c66d"
     api = supertest('https://transaction-service.herokuapp.com');
@@ -21,6 +22,7 @@ var should = require('chai').should(),
 	        	expect(typeof res.body['ttl']).to.equal('number')
 	        	expect(typeof res.body['created_date']).to.equal('string')
 	         	transaction_id = res.body['transaction_id'];
+	         	log(transaction_id, 'test.log');
 	         	done();
 	            })
     	})
