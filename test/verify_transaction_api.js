@@ -53,6 +53,7 @@ var should = require('chai').should(),
 
 	    it('should return 401 when api key is invalid', function(done) {
 	    	var invalid_api_key = Math.random().toString(26).slice(2)
+	    	log("invalid_api_key: " + invalid_api_key, 'test.log')
 	    	api.get('/v1/transaction/' + transaction_id)
 	        .set('Api-Key', invalid_api_key)
 			.send()
@@ -86,7 +87,9 @@ var should = require('chai').should(),
 	  	})
 
 	 	it('should return 404 if unknown transaction id is provided', function(done) {
-	 		api.get('/v1/transaction/' + uuid.v4())
+	 		var unknown_transaction_id = uuid.v4()
+	 		log("unknown_transaction_id: " + unknown_transaction_id, 'test.log')
+	 		api.get('/v1/transaction/' + unknown_transaction_id)
 	        .set('Api-Key', api_key)
 			.send()
 			.expect(404)
@@ -98,6 +101,7 @@ var should = require('chai').should(),
 
 	 	it('should return 400 if invalid transaction id is provided', function(done) {
 	 		var invalid_transaction_id = Math.random().toString(26).slice(2)
+	 		log("invalid_transaction_id: " + invalid_transaction_id, 'test.log')
 	 		api.get('/v1/transaction/' + invalid_transaction_id)
 	        .set('Api-Key', api_key)
 			.send()
