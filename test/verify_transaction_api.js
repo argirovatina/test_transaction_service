@@ -49,9 +49,10 @@ var should = require('chai').should(),
 	            });
 		})
 
-	    it('should return 401 when api key is incorrect', function(done) {
+	    it('should return 401 when api key is invalid', function(done) {
+	    	var invalid_api_key = Math.random().toString(26).slice(2)
 	    	api.get('/v1/transaction/' + transaction_id)
-	        .set('Api-Key', '12345Q')
+	        .set('Api-Key', invalid_api_key)
 			.send()
 			.expect(401)
 	        .end(function (err, res) {
