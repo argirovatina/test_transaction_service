@@ -1,6 +1,7 @@
 var should = require('chai').should(),
     expect = require('chai').expect,
     supertest = require('supertest'),
+    uuid = require("uuid");
     api_key = "aa0a34df13827f999a0d3e3daccede59"
     expired_transaction_id = "7133b3e2-622e-478f-9d36-06da29c6c66d"
     api = supertest('https://transaction-service.herokuapp.com');
@@ -80,5 +81,25 @@ var should = require('chai').should(),
 	         	done();
 	         	});
 	  })
+	 it('should return 404 if unknown transaction id is provided', function(done) {
+	 	api.get('/v1/transaction/' + uuid.v4())
+	        .set('Api-Key', api_key)
+			.send()
+			.expect(404)
+	        .end(function (err, res) {
+	         	expect(res.statusCode).to.equal(404)
+	         	done();
+	         	});
+	 })
+	 it('should return 400 if invalid transaction id is provided', function(done) {
+	 	var invalid_transaction_id = Math.random().toString(26).slice(2)
+	 	api.get('/v1/transaction/' + invalid_transaction_id)
+	        .set('Api-Key', api_key)
+			.send()
+			.expect(400)
+	        .end(function (err, res) {
+	         	expect(res.statusCode).to.equal(400)
+	         	done();
+	         	});
+	        });
 })
-

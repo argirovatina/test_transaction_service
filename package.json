@@ -19,7 +19,8 @@
     "chai": "^3.5.0",
     "mocha": "^5.2.0",
     "mocha-jenkins-reporter": "^0.4.1",
-    "test.js": "^1.0.0"
+    "test.js": "^1.0.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "supertest": "^3.4.2"
