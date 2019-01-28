@@ -80,9 +80,10 @@ var should = require('chai').should(),
 	         	expect(res.statusCode).to.equal(404)
 	         	done();
 	         	});
-	  })
-	 it('should return 404 if unknown transaction id is provided', function(done) {
-	 	api.get('/v1/transaction/' + uuid.v4())
+	  	})
+
+	 	it('should return 404 if unknown transaction id is provided', function(done) {
+	 		api.get('/v1/transaction/' + uuid.v4())
 	        .set('Api-Key', api_key)
 			.send()
 			.expect(404)
@@ -90,10 +91,11 @@ var should = require('chai').should(),
 	         	expect(res.statusCode).to.equal(404)
 	         	done();
 	         	});
-	 })
-	 it('should return 400 if invalid transaction id is provided', function(done) {
-	 	var invalid_transaction_id = Math.random().toString(26).slice(2)
-	 	api.get('/v1/transaction/' + invalid_transaction_id)
+	 	})
+
+	 	it('should return 400 if invalid transaction id is provided', function(done) {
+	 		var invalid_transaction_id = Math.random().toString(26).slice(2)
+	 		api.get('/v1/transaction/' + invalid_transaction_id)
 	        .set('Api-Key', api_key)
 			.send()
 			.expect(400)
@@ -101,5 +103,5 @@ var should = require('chai').should(),
 	         	expect(res.statusCode).to.equal(400)
 	         	done();
 	         	});
-	        });
-})
+		});
+	})
